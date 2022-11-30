@@ -20,3 +20,4 @@ pip install winotify (for windows)
 pip install -r requirements.txt
 ```
 
+py-3.10.0

@@ -11,10 +11,11 @@ lower_limits = [100, 130, 140, 280, 30]
 
 while True:
     last_prices = [pdr.DataReader(ticker, "yahoo")["Adj Close"][-1] for ticker in tickers]
-    time.sleep (1)
+    print(last_prices)
+    time.sleep(1)
     for i in range(len(tickers)):
         if last_prices[i] > upper_limits[i]: 
-            toast = Notification(app_id="SUBUX Stock Alarm Bot",
+            toast = Notification(app_id="SUBUX Stock Bot",
                                 title=" Price Alert For " + tickers[i],
                                 msg=f"{tickers[i]} has reached a price of {last_prices[i]}. You might want to sell.", 
                                 icon=os.path.join(os.getewd(), "src/s.png"), 
@@ -23,7 +24,7 @@ while True:
             toast.set_audio(audio.LoopingAlarm6, loop=True)
             toast.show()    
         elif last_prices[i] < lower_limits[i]:
-            toast = Notification(app_id="SUBUX Stock Alarm Bot",
+            toast = Notification(app_id="SUBUX Stock Bot",
                                 title=" Price Alert For " + tickers[i],
                                 msg=f"{tickers[i]} has reached a price of {last_prices[i]}. You might want to buy.", 
                                 icon=os.path.join(os.getewd(), "src/cash.png"), 

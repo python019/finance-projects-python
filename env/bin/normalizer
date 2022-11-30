@@ -1,4 +1,4 @@
-#!/Users/apple/real_projects/trading-programs/stock-p-bot/env/bin/python3.10
+#!/Users/apple/real_projects/trading-programs/main/env/bin/python3.10
 # -*- coding: utf-8 -*-
 import re
 import sys

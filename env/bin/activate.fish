@@ -30,7 +30,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/apple/real_projects/trading-programs/stock-p-bot/env"
+set -gx VIRTUAL_ENV "/Users/apple/real_projects/trading-programs/main/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

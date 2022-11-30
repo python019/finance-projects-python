@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/apple/real_projects/trading-programs/stock-p-bot/env"
+VIRTUAL_ENV="/Users/apple/real_projects/trading-programs/main/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

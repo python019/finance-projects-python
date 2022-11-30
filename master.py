@@ -18,7 +18,7 @@ while True:
             toast = Notification(app_id="SUBUX Stock Bot",
                                 title=" Price Alert For " + tickers[i],
                                 msg=f"{tickers[i]} has reached a price of {last_prices[i]}. You might want to sell.", 
-                                icon=os.path.join(os.getewd(), "src/s.png"), 
+                                icon=os.path.join(os.getcwd(), "src/s.png"), 
                                 duration="long")
             toast.add_actions(label="Go to Stockbroker", launch="http://subux.uz/")
             toast.set_audio(audio.LoopingAlarm6, loop=True)
@@ -27,7 +27,7 @@ while True:
             toast = Notification(app_id="SUBUX Stock Bot",
                                 title=" Price Alert For " + tickers[i],
                                 msg=f"{tickers[i]} has reached a price of {last_prices[i]}. You might want to buy.", 
-                                icon=os.path.join(os.getewd(), "src/cash.png"), 
+                                icon=os.path.join(os.getcwd(), "src/cash.png"), 
                                 duration="long")
             toast.add_actions(label="Go to Stockbroker", launch="http://subux.uz/")
             toast.set_audio(audio.LoopingAlarm8, loop=True)

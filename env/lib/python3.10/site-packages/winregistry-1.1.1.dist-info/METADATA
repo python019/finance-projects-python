@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: winregistry
+Version: 1.1.1
+Summary: Library aimed at working with Windows registry
+Home-page: https://github.com/shpaker/winregistry
+Keywords: windows,registry,regedit,winreg
+Author: Aleksandr Shpak
+Author-email: shpaker@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Framework :: Robot Framework :: Library
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Project-URL: Repository, https://github.com/shpaker/winregistry
+Description-Content-Type: text/markdown
+
+# winregistry
+
+Minimalist Python library aimed at working with Windows Registry.
+
+## Installation
+
+```bash
+pip install winregistry
+```
+
+## Usage
+
+```py
+from winregistry import WinRegistry
+
+TEST_REG_PATH = r"HKLM\SOFTWARE\_REMOVE_ME_"
+
+
+if __name__ == "__main__":
+    with WinRegistry() as client:
+        client.create_key(TEST_REG_PATH)
+        client.write_entry(TEST_REG_PATH, "remove_me", "test")
+        test_entry = client.read_entry(TEST_REG_PATH, "remove_me")
+        assert test_entry.value == "test"
+        client.delete_entry(TEST_REG_PATH, "remove_me")
+```
+
+Usage with ``Robot Testing Framework`` Library
+----------------------------------------------
+
+```
+*** Settings ***
+Library    winregistry.robot
+
+*** Test Cases ***
+Valid Login
+        ${path} =    Set Variable    HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run
+        Write Registry Entry    ${path}             Notepad   notepad.exe
+        ${autorun} =            Read Registry Key   ${path}
+        Delete Registry Entry   ${path}             Notepad
+```
+

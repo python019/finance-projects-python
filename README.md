@@ -1,21 +1,19 @@
 <div align="center">
 
-# Japanese Candlestick Charts in Python
+# Stock Market Map in Python
 
 </div> 
 
 <img src="src/all.png">
 
-<img src="src/can.png">
-
 ## Libraries
 
 ```
-pip install pandas
+pip install beautifulsoup4
 ```
 
 ```
-pip install pandas-datareader
+pip install requests
 ```
 
 ```
@@ -23,7 +21,7 @@ pip install matplotlib
 ```
 
 ```
-pip install mplfinance
+pip install squarify
 ```
 
 ## or

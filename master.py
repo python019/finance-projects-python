@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import matplotlib.pyplot as plt
-import sqarify
+import squarify
 
 url = "https://companiesmarketcap.com/dow-jones/largest-companies-by-market-cap/"
 
@@ -28,3 +28,9 @@ for row in rows:
             sizes.append(float(market_cap[1:-2]) * 10 ** 9)
     except AttributeError:
         pass
+
+labels = [f"{symbols[i]}\n ({market_caps [i]})" for i in range(len(symbols))]
+colors = [plt.cm.Set2(i / float(len(symbols))) for i in range(len(symbols)) ]
+
+squarify.plot(sizes=sizes, label=labels, color=colors, bar_kwargs={"linewidth": 0.5, "edgecolor": "#111111"})
+plt.show()

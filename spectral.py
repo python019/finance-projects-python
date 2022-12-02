@@ -3,7 +3,9 @@ from bs4 import BeautifulSoup
 import matplotlib.pyplot as plt
 import squarify
 
-url = "https://companiesmarketcap.com/dow-jones/largest-companies-by-market-cap/"
+# Real Estate Companies
+
+url = "https://companiesmarketcap.com/real-estate/largest-real-estate-companies-by-market-cap/"
 
 response = requests.get(url)
 
@@ -30,7 +32,7 @@ for row in rows:
         pass
 
 labels = [f"{symbols[i]}\n ({market_caps [i]})" for i in range(len(symbols))]
-colors = [plt.cm.Set2(i / float(len(symbols))) for i in range(len(symbols)) ]
+colors = [plt.cm.Spectral(i / float(len(symbols))) for i in range(len(symbols)) ]
 
 squarify.plot(sizes=sizes, label=labels, color=colors, bar_kwargs={"linewidth": 0.5, "edgecolor": "#111111"})
 plt.show()

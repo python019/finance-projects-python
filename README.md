@@ -4,7 +4,9 @@
 
 </div> 
 
-<img src="src/all.png">
+<img src="src/main.png">
+
+<img src="src/two.png">
 
 ## Libraries
 
